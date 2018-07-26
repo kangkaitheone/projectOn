@@ -1,0 +1,56 @@
+将项目通过git来进行管理
+    1.自己创建好基本的项目结构
+    2.将我们的项目变成一个git仓库 git init
+    3.因为我们的代码仓库只需要存放我们的代码,
+      像class文件,编译器自身生成的文件都不需要放入到仓库中,
+      而且如果放入还会经常出现代码冲突.
+      解决方案:使用我们的忽略文件进行设置 .gitignore
+    4.设置内容如下
+        *.class
+
+        #*.jar
+        *.war
+        *.ear
+        *.orig
+
+        #maven
+        target/
+
+        #eclipse
+        .settings/
+        .project
+        .classpath
+
+        #idea
+        .idea/
+        /idea/
+        *.ipr
+        *.iml
+        *.iws
+
+        #temp file 临时文件
+        *.log
+        *.cache
+        *.diff
+        *.patch
+        *.tmp
+
+        #system ignore
+        .DS_Store
+        Thumbs.db
+    5.在设置好忽略文件后我们就可以将我们的代码提交到我们的
+      本地仓库了,这时候对于我们的文件我们需要先通过 git add
+      要添加的文件的路径 来将我们放入本地仓库的代码进行添加操作,
+      接下来通过git commit - m "提交信息:"来真的将我们的项目
+      代码提交到本地仓库当中.这时候才是真的将代码保存在本地仓库了.
+      我们如果希望跟别人共同进行代码的管理就需要将我们的本地仓库
+      和远程git仓库进行连接 并将代码推送到远程服务器上
+      这样才能跟别人进行共同开发
+      开发地址如下:
+      git remote add origin https://github.com/kangkaitheone/teamProject.git
+      结构
+      git remote add origin + 自己远程服务器上面的仓库的地址
+      这样连接好了之后我们就可以进行项目从本地到服务器的推送了
+      git push -u origin master
+
+
