@@ -1,19 +1,13 @@
 package com.lanou.Controller;
 
-
-
-
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class UserController {
-    @Autowired
-    private UserService userService ;
-    @RequestMapping(value="/findAll")
-    public String findAll(Model model) {
-        List<User> users = userService.findAll();
-        model.addAttribute("users",users);
-
-        return "userlist" ;
-
+    @RequestMapping(value = "login")
+    public String login(){
+        return "login";
     }
+
 }
